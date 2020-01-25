@@ -17,7 +17,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
-from .views import index, about, contact, news, feedback, service
+from .views import index, about, contact, news, feedback, service, price_list
 
 urlpatterns = [
     path('', index, name='home_page'),
@@ -26,6 +26,7 @@ urlpatterns = [
     path('news/', news, name='news_page'),
     path('feedback/', feedback, name='feedback_page'),
     path('service/', service, name='service_page'),
+    path('pricing/', price_list, name='price_list_page'),
 
     path('admin/', admin.site.urls),
 ]

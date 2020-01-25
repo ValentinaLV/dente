@@ -23,3 +23,7 @@ def feedback(request):
 
 def service(request):
     return render(request, 'services.html')
+
+
+def price_list(request):
+    return render(request, 'pricing.html')
