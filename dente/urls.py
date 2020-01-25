@@ -16,12 +16,14 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
-from .views import index, about, contact, news, feedback, service, price_list
+from django.urls import path, include
+from .views import index, contact, news, feedback, service, price_list
 
 urlpatterns = [
     path('', index, name='home_page'),
-    path('about/', about, name='about_page'),
+
+    path('about/', include(('aboutus.urls', 'aboutus'), namespace='about')),
+
     path('contact/', contact, name='contact_page'),
     path('news/', news, name='news_page'),
     path('feedback/', feedback, name='feedback_page'),
@@ -33,3 +35,4 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
