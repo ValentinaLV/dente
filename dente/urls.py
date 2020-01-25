@@ -17,12 +17,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from .views import index, contact, news, feedback, service, price_list
+from .views import contact, news, feedback, service, price_list
 
 urlpatterns = [
-    path('', index, name='home_page'),
-
-    path('about/', include(('aboutus.urls', 'aboutus'), namespace='about')),
+    path('', include(('aboutus.urls', 'aboutus'), namespace='about')),
 
     path('contact/', contact, name='contact_page'),
     path('news/', news, name='news_page'),
