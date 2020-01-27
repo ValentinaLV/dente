@@ -17,14 +17,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from .views import contact, news, feedback, service, price_list
+from .views import contact, news, service, price_list
 
 urlpatterns = [
     path('', include(('aboutus.urls', 'aboutus'), namespace='about')),
+    path('feedback/', include(('feedback.urls', 'feedback'), namespace='feedback')),
 
     path('contact/', contact, name='contact_page'),
     path('news/', news, name='news_page'),
-    path('feedback/', feedback, name='feedback_page'),
     path('service/', service, name='service_page'),
     path('pricing/', price_list, name='price_list_page'),
 

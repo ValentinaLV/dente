@@ -878,3 +878,9 @@ a {
     background: #f23a2e;
     color: #fff;
     border: 1px solid transparent; }
+
+
+.btn-pagination {
+  color: #ffffff;
+  background-color: #f23a2e;
+}

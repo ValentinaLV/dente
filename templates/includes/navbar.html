@@ -67,13 +67,8 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="has-children">
-                                    <a href="{% url 'feedback_page' %}">Patients</a>
-                                    <ul class="dropdown arrow-top">
-                                        <li><a href="#">Menu One</a></li>
-                                        <li><a href="#">Menu Two</a></li>
-                                        <li><a href="#">Menu Three</a></li>
-                                    </ul>
+                                <li>
+                                    <a href="{% url 'feedback:patient_feedback_url' %}">Patients</a>
                                 </li>
                                 <li><a href="{% url 'news_page' %}">News</a></li>
                                 <li><a href="{% url 'service_page' %}">Services</a></li>
