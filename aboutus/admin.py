@@ -12,7 +12,7 @@ class DoctorProfileAdmin(admin.ModelAdmin):
 
 
 class SpecializationAdmin(admin.ModelAdmin):
-    list_display = ['title', 'slug']
+    list_display = ['title', 'slug', 'description']
     ordering = ['title']
 
 

@@ -55,9 +55,12 @@ class Doctor(models.Model):
 class Specialization(models.Model):
     title = models.CharField(max_length=50)
     slug = models.SlugField(max_length=50, unique=True, blank=True)
+    description = models.TextField(blank=True)
+    stages_of_treatment = models.TextField(blank=True)
+    features = models.TextField(blank=True)
 
     class Meta:
-        ordering = ['title']
+        ordering = ('title',)
 
     def get_absolute_url(self):
         return reverse('about:specialization_details_url', kwargs={'slug': self.slug})
