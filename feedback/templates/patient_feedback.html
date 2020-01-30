@@ -86,11 +86,14 @@
                     <form action="" method="post" class="p-5 bg-light">
                         {% csrf_token %}
                         {% for field in form %}
-
                             {{ field }}
-
                         {% endfor %}
-                        <button type="submit" class="btn btn-default mt-2 float-right">Save Comment</button>
+
+                        {% if request.user.is_authenticated %}
+                            <button type="submit" class="btn btn-default mt-2 float-right">Save Comment</button>
+                        {% else %}
+                            <a href="/accounts/login/" class="btn btn-default mt-2 float-right">Save Comment</a>
+                        {% endif %}
                     </form>
                 </div>
             </div>

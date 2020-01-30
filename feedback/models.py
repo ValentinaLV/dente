@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
@@ -11,7 +11,7 @@ class PatientFeedback(models.Model):
         ('Good', '4 -> Good'),
         ('Great', '5 -> Great'),
     ]
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     content = models.TextField()
     mark = models.CharField(max_length=30, choices=MARK, blank=False)
     created_date = models.DateTimeField(default=timezone.now)

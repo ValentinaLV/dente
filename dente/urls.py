@@ -17,18 +17,22 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from .views import contact, news, service, price_list
+from .views import contact, service, price_list
 
 urlpatterns = [
     path('', include(('aboutus.urls', 'aboutus'), namespace='about')),
     path('feedback/', include(('feedback.urls', 'feedback'), namespace='feedback')),
+    path('news/', include(('news.urls', 'news'), namespace='news')),
+    path('user/', include(('user.urls', 'user'), namespace='user')),
 
     path('contact/', contact, name='contact_page'),
-    path('news/', news, name='news_page'),
     path('service/', service, name='service_page'),
     path('pricing/', price_list, name='price_list_page'),
 
     path('admin/', admin.site.urls),
+    path('accounts/', include('django_registration.backends.one_step.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+
 ]
 
 if settings.DEBUG:

@@ -30,6 +30,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 COMMENTS_PER_PAGE = 4
+POSTS_PER_PAGE = 6
+EMAIL_HUNTER_API_KEY = '7a7dd5148f82b105325add1e6f5385b3e9f7ae63'
 
 # Application definition
 
@@ -41,8 +43,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'crispy_forms',
+
     'aboutus',
     'feedback',
+    'news',
+    'user',
+
+
 
 ]
 
@@ -125,6 +133,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+LOGIN_URL = 'accounts/login'
+LOGIN_REDIRECT_URL = 'about:home_page'
+LOGOUT_REDIRECT_URL = 'about:home_page'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
@@ -138,3 +149,15 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Custom User Model
+AUTH_USER_MODEL = 'user.CustomUser'
+
+# django.contrib.sites
+SITE_ID = 1
+
+# django.allauth
+ACCOUNT_EMAIL_REQUIRED = (True)
+
+# django-crispy-forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
