@@ -36,7 +36,6 @@ def pagination_feedback(request):
     }
 
 
-@login_required()
 def patient_feedback(request):
 
     if request.method == 'POST':
