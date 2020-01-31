@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 
 from .forms import AppointmentForm, GetInTouchForm
 
@@ -23,4 +23,3 @@ def contact_us(request):
         'appointment_form': appointment_form,
         'contact_form': contact_form
     })
-

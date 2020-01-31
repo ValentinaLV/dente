@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}
+    Appointments History
+{% endblock %}
+
+{% block banner %}
+    <div class="site-blocks-cover inner-page" style="background-image: url(../../static/images/hero_bg_1.jpg);" data-aos="fade"
+         data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <span class="sub-text">Appointments History</span>
+                    <h1><strong>Your</strong> Visits</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="text-center mb-5 mt-5">
+            <hr>
+            <h1>Appointments History</h1>
+            <hr>
+            {% if appointments %}
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Appointment Date</th>
+                        <th>Treatment</th>
+                        <th>Patient Note</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for appointment in appointments %}
+                        <tr>
+                            <td>{{ appointment.date|date:"d M Y" }}</td>
+                            <td>{{ appointment.treatment_needed }}</td>
+                            <td>{{ appointment.notes }}</td>
+                            {% if appointment.status %}
+                                <td><i class="fa fa-check"></i>&nbsp;Complete</td>
+                            {% else %}
+                                <td><i class="fas fa-cog fa-spin"></i>&nbsp;In process</td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <div>
+                    <p>You have no appointments yet.</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

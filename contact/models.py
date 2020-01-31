@@ -11,6 +11,7 @@ class Appointment(models.Model):
     treatment_needed = models.ForeignKey(DoctorProfile, on_delete=models.CASCADE)
     email = models.EmailField(max_length=30)
     notes = models.TextField(blank=True, db_index=True)
+    status = models.BooleanField(default=False)
 
     class Meta:
         verbose_name = "Appointment"

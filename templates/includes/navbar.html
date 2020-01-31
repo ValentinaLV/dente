@@ -40,6 +40,16 @@
                                 <span class="icon-user mr-2"></span>
                                 <span class="d-none d-md-inline-block">Hi, {{ request.user.first_name }}</span>
                             </a>
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-dark dropdown-toggle"
+                                        data-toggle="dropdown">
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{% url 'user:appointment-history' %}" style="color: #d3190d;">
+                                        Appointments &nbsp;<i class="fa fa-history" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
                         {% endif %}
                     </div>
                 </div>

@@ -7,7 +7,7 @@ class AppointmentForm(forms.ModelForm):
 
     class Meta:
         model = Appointment
-        fields = '__all__'
+        exclude = ['status']
 
         widgets = {
             'first_name': forms.TextInput(attrs={'class': 'form-control px-2', 'placeholder': 'First Name', 'required': 'required'}),
