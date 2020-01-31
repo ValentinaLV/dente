@@ -49,8 +49,7 @@ INSTALLED_APPS = [
     'feedback',
     'news',
     'user',
-
-
+    'pricing',
 
 ]
 

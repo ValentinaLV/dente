@@ -29,14 +29,17 @@
                 </div>
             </div>
 
-
-            <ul class="nav nav-tabs menu_tab center-box menu-mb text-center" role="tablist" style="display: inline;">
-                {% for profile in profiles %}
-                    <li class="nav-item">
-                        <a class="nav-link btn dento-btn m-1" data-toggle="pill" href="#{{ profile }}" style="border: none">{{ profile }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
+            <hr>
+            <div class="container">
+                <ul class="row nav nav-tabs menu_tab center-box menu-mb text-center" role="tablist">
+                    {% for profile in profiles %}
+                         <li class="col-sm-4 nav-item">
+                             <a class="nav-link btn dento-btn m-1" data-toggle="pill" href="#{{ profile }}"
+                                style="border: none">{{ profile }}</a>
+                         </li>
+                     {% endfor %}
+                </ul>
+            </div>
 
             <div class="tab-content slideanim">
                 {% for profile in profiles %}

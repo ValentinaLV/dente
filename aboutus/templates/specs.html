@@ -27,14 +27,18 @@
                 </div>
             </div>
 
-            <ul class="nav nav-tabs menu_tab center-box menu-mb text-center" role="tablist" style="display: inline;">
-                {% for specialization in specializations %}
-                    <li class="nav-item">
-                        <a class="nav-link btn dento-btn m-1" href="{{ specialization.get_absolute_url }}"
-                           style="border: none">{{ specialization }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
+            <hr>
+            <div class="container">
+                <ul class="row nav nav-tabs menu_tab center-box menu-mb text-center" role="tablist">
+                    {% for specialization in specializations %}
+                         <li class="col-sm-4 nav-item">
+                             <a class="nav-link btn dento-btn m-1" href="{{ specialization.get_absolute_url }}"
+                                style="border: none">{{ specialization }}</a>
+                         </li>
+                     {% endfor %}
+                </ul>
+            </div>
+
         </div>
     </div>
 

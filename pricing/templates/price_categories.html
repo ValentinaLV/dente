@@ -1,0 +1,64 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}
+    Price List - By Category
+{% endblock %}
+
+{% block banner %}
+    <div class="site-blocks-cover inner-page" style="background-image: url(../../static/images/hero_bg_1.jpg);"
+         data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <span class="sub-text">Best Prices</span>
+                    <h1>Our &nbsp;<strong>Price List</strong></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="site-section section-about">
+        <div class="container">
+            <div class="row mb-5 justify-content-center">
+                <div class="col-md-6 text-center">
+                    <h2 class="site-heading text-black mb-5">Best <strong>Prices For You</strong></h2>
+                </div>
+            </div>
+
+            <hr>
+            <div class="container">
+                <ul class="row nav nav-tabs menu_tab center-box menu-mb text-center" role="tablist">
+                    {% for category in categories %}
+                         <li class="col-sm-4 nav-item">
+                             <a class="nav-link btn dento-btn m-1" data-toggle="pill" href="#{{ category }}"
+                                style="border: none">{{ category }}</a>
+                         </li>
+                     {% endfor %}
+                </ul>
+            </div>
+
+            <div class="tab-content slideanim">
+                {% for category in categories %}
+                    <div id="{{ category }}" class="tab-pane fade show">
+                        <div class="row">
+                            {% for product in products %}
+                                {% if product.category == category %}
+                                    <div class="col-md-4 pr-md-5 text-center mb-5" style="margin-top: 30px;">
+                                        <div>
+                                            <h3>{{ product.name }}</h3>
+                                            <p>{{ product.description }}</p>
+                                            <p>$ {{ product.price }}</p>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
