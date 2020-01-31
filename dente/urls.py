@@ -17,7 +17,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from .views import contact
+
 
 urlpatterns = [
     path('', include(('aboutus.urls', 'aboutus'), namespace='about')),
@@ -25,8 +25,7 @@ urlpatterns = [
     path('news/', include(('news.urls', 'news'), namespace='news')),
     path('user/', include(('user.urls', 'user'), namespace='user')),
     path('pricing/', include(('pricing.urls', 'pricing'), namespace='pricing')),
-
-    path('contact/', contact, name='contact_page'),
+    path('contact/', include(('contact.urls', 'contact'), namespace='contact')),
 
     path('admin/', admin.site.urls),
     path('accounts/', include('django_registration.backends.one_step.urls')),

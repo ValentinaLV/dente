@@ -7,6 +7,10 @@ def index(request):
     return render(request, 'index.html')
 
 
+def success_login(request):
+    return render(request, 'includes/success_login.html')
+
+
 def doctors_list(request):
     doctors = Doctor.objects.all()
     profiles = DoctorProfile.objects.all()

@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'news',
     'user',
     'pricing',
+    'contact',
 
 ]
 
@@ -133,7 +134,7 @@ USE_L10N = True
 USE_TZ = True
 
 LOGIN_URL = 'accounts/login'
-LOGIN_REDIRECT_URL = 'about:home_page'
+LOGIN_REDIRECT_URL = 'about:success-login'
 LOGOUT_REDIRECT_URL = 'about:home_page'
 
 # Static files (CSS, JavaScript, Images)
