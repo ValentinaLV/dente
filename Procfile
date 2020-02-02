@@ -1,1 +1,1 @@
-web: gunicorn dente.wsgi
+web: gunicorn dente.wsgi --log-file -
