@@ -5,9 +5,9 @@ from subscribe.forms import EmailSubscribeForm
 
 
 def index(request):
-    form = EmailSubscribeForm()
+    email_form = EmailSubscribeForm()
     return render(request, 'index.html', {
-        'form': form
+        'email_form': email_form
     })
 
 

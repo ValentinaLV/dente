@@ -60,7 +60,7 @@
         <div class="container py-1">
             <div class="row align-items-center">
                 <div class="col-2">
-                    <h2 class="mb-0 site-logo"><a href="{% url 'about:home_page' %}">Dente</a></h2>
+                    <h2 class="mb-0 site-logo"><a href="{% url 'about:home-page' %}">Dente</a></h2>
                 </div>
                 <div class="col-10">
                     <nav class="site-navigation text-right" role="navigation">
@@ -74,18 +74,18 @@
 
                             <ul class="site-menu js-clone-nav d-none d-lg-block">
                                 <li>
-                                    <a href="{% url 'about:home_page' %}">Home</a>
+                                    <a href="{% url 'about:home-page' %}">Home</a>
                                 </li>
                                 <li class="has-children">
-                                    <a href="{% url 'about:doctors_list_url' %}">About Us</a>
+                                    <a href="{% url 'about:doctors-list' %}">About Us</a>
                                     <ul class="dropdown arrow-top">
-                                        <li><a href="{% url 'about:doctors_list_url' %}">Our Profiles</a></li>
-                                        <li><a href="{% url 'about:specializations_list_url' %}">Our Specializations</a>
+                                        <li><a href="{% url 'about:doctors-list' %}">Our Profiles</a></li>
+                                        <li><a href="{% url 'about:specializations-list' %}">Our Specializations</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="{% url 'feedback:patient_feedback_url' %}">Patients</a>
+                                    <a href="{% url 'feedback:patient-feedback' %}">Patients</a>
                                 </li>
                                 <li><a href="{% url 'news:news-details' %}">News</a></li>
                                 <li class="has-children">

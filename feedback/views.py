@@ -1,4 +1,3 @@
-from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from dente.settings import COMMENTS_PER_PAGE
@@ -43,7 +42,7 @@ def patient_feedback(request):
             new_feedback = feedback_form.save(commit=False)
             new_feedback.user = request.user
             new_feedback.save()
-            return redirect('feedback:patient_feedback_url')
+            return redirect('feedback:patient-feedback')
 
     return render(request, 'patient_feedback.html',
                   context=pagination_feedback(request))

@@ -46,7 +46,7 @@ class Doctor(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('about:doctor_details_url', kwargs={'slug': self.slug})
+        return reverse('about:doctor-details', kwargs={'slug': self.slug})
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
@@ -63,7 +63,7 @@ class Specialization(models.Model):
         ordering = ('title',)
 
     def get_absolute_url(self):
-        return reverse('about:specialization_details_url', kwargs={'slug': self.slug})
+        return reverse('about:specialization-details', kwargs={'slug': self.slug})
 
     def save(self, *args, **kwargs):
         if not self.id:
