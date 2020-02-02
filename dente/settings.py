@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
 
 from .secret import DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, SECRET_KEY_
 
@@ -33,7 +34,10 @@ EMAIL_HUNTER_API_KEY = '7a7dd5148f82b105325add1e6f5385b3e9f7ae63'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = []
+
+#for heroku app
+ALLOWED_HOSTS = ['dente-clinic.herokuapp.com']
 
 COMMENTS_PER_PAGE = 4
 POSTS_PER_PAGE = 6
@@ -148,6 +152,8 @@ LOGOUT_REDIRECT_URL = 'about:home-page'
 
 STATIC_URL = '/static/'
 
+#for heroku app
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
@@ -167,3 +173,6 @@ ACCOUNT_EMAIL_REQUIRED = (True)
 
 # django-crispy-forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+#for heroku app
+django_heroku.settings(locals())
