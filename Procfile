@@ -1,1 +1,1 @@
-web: gunicorn dente.wsgi --log-file -
+web: gunicorn dente.wsgi -b 0.0.0.0:$PORT
