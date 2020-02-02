@@ -8,7 +8,6 @@ class NewsCommentForm(forms.ModelForm):
         fields = ['content']
 
         widgets = {
-            'content': forms.Textarea(
-                attrs={'class': 'form-control mt-2 mb-2', 'placeholder': 'Type your comment here...', 'required': 'required'})
-        }
-
+            'content': forms.Textarea(attrs={'class': 'form-control mt-2 mb-2',
+                                             'placeholder': 'Type your comment here...',
+                                             'required': 'required'})}

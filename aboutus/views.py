@@ -1,10 +1,14 @@
 from django.shortcuts import render
 
 from .models import Doctor, DoctorProfile, Specialization
+from subscribe.forms import EmailSubscribeForm
 
 
 def index(request):
-    return render(request, 'index.html')
+    form = EmailSubscribeForm()
+    return render(request, 'index.html', {
+        'form': form
+    })
 
 
 def success_login(request):

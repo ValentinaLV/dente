@@ -26,6 +26,7 @@ urlpatterns = [
     path('user/', include(('user.urls', 'user'), namespace='user')),
     path('pricing/', include(('pricing.urls', 'pricing'), namespace='pricing')),
     path('contact/', include(('contact.urls', 'contact'), namespace='contact')),
+    path('subscribe/', include(('subscribe.urls', 'subscribe'), namespace='subscribe')),
 
     path('admin/', admin.site.urls),
     path('accounts/', include('django_registration.backends.one_step.urls')),

@@ -24,6 +24,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = SECRET_KEY_
 
+MAILCHIMP_API_KEY = 'a684efe976f405a9499830840009c2ea-us4'
+MAILCHIMP_DATA_CENTER = 'us4'
+MAILCHIMP_EMAIL_LIST_ID = '93d7005713'
+
+EMAIL_HUNTER_API_KEY = '7a7dd5148f82b105325add1e6f5385b3e9f7ae63'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -31,7 +37,6 @@ ALLOWED_HOSTS = []
 
 COMMENTS_PER_PAGE = 4
 POSTS_PER_PAGE = 6
-EMAIL_HUNTER_API_KEY = '7a7dd5148f82b105325add1e6f5385b3e9f7ae63'
 
 # Application definition
 
@@ -51,6 +56,7 @@ INSTALLED_APPS = [
     'user',
     'pricing',
     'contact',
+    'subscribe',
 
 ]
 
