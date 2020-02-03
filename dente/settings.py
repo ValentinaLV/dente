@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import django_heroku
 
-#from .secret import DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, SECRET_KEY_
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = SECRET_KEY_
+SECRET_KEY = '!g3b30zzo(q5qyrn672+dco_wx+0x%2bcb*khc+2w-iibn&7)b'
 
 MAILCHIMP_API_KEY = 'a684efe976f405a9499830840009c2ea-us4'
 MAILCHIMP_DATA_CENTER = 'us4'
