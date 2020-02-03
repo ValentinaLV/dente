@@ -1,13 +1,16 @@
 from django.shortcuts import render
 
 from .models import Doctor, DoctorProfile, Specialization
+from news.models import News
 from subscribe.forms import EmailSubscribeForm
 
 
 def index(request):
     email_form = EmailSubscribeForm()
+    posts = News.objects.all()[:3]
     return render(request, 'index.html', {
-        'email_form': email_form
+        'email_form': email_form,
+        'posts': posts
     })
 
 

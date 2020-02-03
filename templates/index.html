@@ -276,42 +276,21 @@
                             <h3 class="footer-heading mb-4">Recent News</h3>
                             <div class="block-25">
                                 <ul class="list-unstyled">
-                                    <li class="mb-3">
-                                        <a href="#" class="d-flex">
-                                            <figure class="image mr-4">
-                                                <img src="{% static 'images/hero_bg_1.jpg' %}" alt="" class="img-fluid">
-                                            </figure>
-                                            <div class="text">
-                                                <span class="small text-uppercase date">Sep 16, 2018</span>
-                                                <h3 class="heading font-weight-light">Lorem ipsum dolor sit amet
-                                                    consectetur elit</h3>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="mb-3">
-                                        <a href="#" class="d-flex">
-                                            <figure class="image mr-4">
-                                                <img src="{% static 'images/hero_bg_1.jpg' %}" alt="" class="img-fluid">
-                                            </figure>
-                                            <div class="text">
-                                                <span class="small text-uppercase date">Sep 16, 2018</span>
-                                                <h3 class="heading font-weight-light">Lorem ipsum dolor sit amet
-                                                    consectetur elit</h3>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="mb-3">
-                                        <a href="#" class="d-flex">
-                                            <figure class="image mr-4">
-                                                <img src="{% static 'images/hero_bg_1.jpg' %}" alt="" class="img-fluid">
-                                            </figure>
-                                            <div class="text">
-                                                <span class="small text-uppercase date">Sep 16, 2018</span>
-                                                <h3 class="heading font-weight-light">Lorem ipsum dolor sit amet
-                                                    consectetur elit</h3>
-                                            </div>
-                                        </a>
-                                    </li>
+                                    {% for post in posts %}
+                                        <li class="mb-3">
+                                            <a href="{{ post.get_absolute_url }}" class="d-flex">
+                                                <figure class="image mr-4">
+                                                    <img src="{% static 'images/hero_bg_1.jpg' %}" alt="" class="img-fluid">
+                                                </figure>
+                                                <div class="text">
+                                                    <span class="small text-uppercase date">{{ post.created_date }}</span>
+                                                    <h3 class="heading font-weight-light">
+                                                        {{ post.title | truncatewords:5 }}
+                                                    </h3>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
