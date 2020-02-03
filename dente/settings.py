@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import django_heroku
 
+from .secret import DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, SECRET_KEY_
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '!g3b30zzo(q5qyrn672+dco_wx+0x%2bcb*khc+2w-iibn&7)b'
+SECRET_KEY = SECRET_KEY_
 
 MAILCHIMP_API_KEY = 'a684efe976f405a9499830840009c2ea-us4'
 MAILCHIMP_DATA_CENTER = 'us4'
@@ -33,10 +34,10 @@ EMAIL_HUNTER_API_KEY = '7a7dd5148f82b105325add1e6f5385b3e9f7ae63'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []
 
 #for heroku app
-ALLOWED_HOSTS = ['dente-clinic.herokuapp.com']
+#ALLOWED_HOSTS = ['dente-clinic.herokuapp.com']
 
 COMMENTS_PER_PAGE = 4
 POSTS_PER_PAGE = 6
@@ -101,10 +102,10 @@ WSGI_APPLICATION = 'dente.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dente_clinic',
-        'USER': 'postgres',
-        'PASSWORD': 'Tinka140792',
-        'HOST': 'localhost',
+        'NAME': DB_NAME,
+        'USER': DB_USER,
+        'PASSWORD': DB_PASSWORD,
+        'HOST': DB_HOST,
         'PORT': '5432',
     }
 }
@@ -173,4 +174,4 @@ ACCOUNT_EMAIL_REQUIRED = (True)
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 #for heroku app
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
