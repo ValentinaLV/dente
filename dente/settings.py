@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import django_heroku
 
-from .secret import DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, SECRET_KEY_
+#from .secret import DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, SECRET_KEY_
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
